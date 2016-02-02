@@ -22,7 +22,7 @@ class Cart:
         self.cart = cart
 
     def __iter__(self):
-        for item in self.cart.item_set.all():
+        for item in self.cart.item_set.all().order_by('id'):
             yield item
 
     def new(self, request):
